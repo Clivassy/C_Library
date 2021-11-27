@@ -20,7 +20,7 @@ all:		${NAME}
 clean:
 			${RM} ${OBJS}
 
-fclean:		clean
+FCLEAN:		clean
 			${RM} ${NAME}
 
 re:			fclean all
