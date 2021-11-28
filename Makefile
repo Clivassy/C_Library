@@ -1,29 +1,67 @@
-SRCS	= ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c ft_strlen.c ft_memset.c ft_bzero.c ft_strlcpy.c ft_toupper.c ft_tolower.c ft_strchr.c ft_strrchr.c ft_memchr.c ft_memcmp.c ft_strnstr.c ft_atoi.c ft_strdup.c ft_memcpy.c ft_strncmp.c
+NAME = libft.a
 
-OBJS = ${SRCS:.c=.o}
-
-NAME = LIBFTEST
-
-CC = cc
-
+CC = gcc
+CFLAGS = -Wall -Wextra -Werror
+AR = ar rcs
 RM = rm -f
 
-CFLAGS = -Wall -Wextra -Werror -c
+FILES = ft_memset \
+		ft_bzero \
+		ft_memcpy \
+		ft_memmove \
+		ft_memchr \
+		ft_memcmp \
+		ft_strlen \
+		ft_strlcpy \
+		ft_strlcat \
+		ft_strchr \
+		ft_strrchr \
+		ft_strnstr \
+		ft_strncmp \
+		ft_atoi \
+		ft_isalpha \
+		ft_isdigit \
+		ft_isalnum \
+		ft_isascii \
+		ft_isprint \
+		ft_toupper \
+		ft_tolower \
+		ft_calloc \
+		ft_strdup \
+		ft_substr \
+		ft_putchar_fd \
+		ft_putstr_fd \
+		ft_putendl_fd \
+		ft_putnbr_fd \
+		ft_itoa \
+		ft_striteri \
 
-.c.o:
-		${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
+SRCS_DIR = ./
+SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
+SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
 
-${NAME}:	${OBJS}
-			${CC} -o ${NAME} ${OBJS}
+OBJS_DIR = ./
+OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
+OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
-all:		${NAME}
+
+.c.o: $(SRCS)
+	$(CC) $(CFLAGS) -c -o $@ $<
+
+$(NAME): $(OBJS)
+	$(AR) $@ $^
+
+bonus: $(OBJS_B)
+	$(AR) $(NAME) $^
+
+all: $(NAME)
 
 clean:
-			${RM} ${OBJS}
+	$(RM) $(OBJS) $(OBJS_B)
 
-fclean:		clean
-			${RM} ${NAME}
+fclean: clean
+	$(RM) $(NAME)
 
-re:			fclean all
+re: clean all
 
-.PHONY:		all clean fclean re
+.PHONY: bonus all clean fclean re
