@@ -1,6 +1,6 @@
 #include "libft.h"
 
-int			ft_isspace(char *str, char c, int index)
+int			ft_check_c(char *str, char c, int index)
 {
 	while(index >= 0)
 	{
@@ -53,8 +53,11 @@ char	*malloc_word(char *str)
 
 char 	**ft_split (char const *s, char c)
 {
-	char **arr = (char **)malloc(sizeof(char *) * (count_words(str) + 1));
-	int i = 0;
+	char **arr; 
+	int i; 
+
+	arr = (char **)malloc(sizeof(char *) * (count_words(str) + 1));
+	i = 0;
 	while (*str)
 	{
 		while (*str && ft_isspace(str, *str, i))
