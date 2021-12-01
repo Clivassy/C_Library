@@ -47,12 +47,16 @@ OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
+COMP_COLOR= 9
 
 .c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -o $@ $<
+	@echo "\033[0;31mCompiling..."
+	@$(CC) $(CFLAGS) -c -o $@ $<
 
 $(NAME): $(OBJS)
-	$(AR) $@ $^
+	@echo "\033[0;33mLinking..."
+	@$(AR) $@ $^
+	@echo "\033[0;32mOK!"
 
 bonus: $(OBJS_B)
 	$(AR) $(NAME) $^
@@ -60,9 +64,13 @@ bonus: $(OBJS_B)
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJS) $(OBJS_B)
+	@echo "\033[0;33mCleaning..."
+	@echo "\033[0;33mCleaning..."
+	@echo "\033[0;33mCleaning..."
+	@$(RM) $(OBJS) $(OBJS_B)
+	@echo "\033[0;32mOK CLEAN!"
 
-fclean: clean
+fclean:	clean
 	$(RM) $(NAME)
 
 re: clean all

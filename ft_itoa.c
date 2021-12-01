@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_itoa.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/01 20:02:22 by jbatoro           #+#    #+#             */
+/*   Updated: 2021/12/01 20:03:44 by jbatoro          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-int ft_len(long nb)
+int	ft_len(long nb)
 {
 	int		len;
 
@@ -15,7 +26,7 @@ int ft_len(long nb)
 	return (len);
 }
 
-char *ft_pos_or_neg(char *s, long nb, int n)
+char	*ft_pos_or_neg(char *s, long nb, int n)
 {
 	if (nb < 0)
 	{
@@ -28,14 +39,14 @@ char *ft_pos_or_neg(char *s, long nb, int n)
 		nb = nb / 10;
 		n--;
 	}
-	return(s);
+	return (s);
 }
 
-char *ft_itoa(int n)
+char	*ft_itoa(int n)
 {
-	int len;
-	long nb; 
-	char *s_itoa;
+	int		len;
+	long	nb;
+	char	*s_itoa;
 
 	nb = n;
 	len = ft_len(nb);
