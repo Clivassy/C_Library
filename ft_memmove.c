@@ -13,7 +13,6 @@
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	unsigned int	i;
 	char			*source;
 	char			*dst;
 
@@ -24,17 +23,14 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	if (dst > source)
 	{
 		while (n > 0)
+			{
 			dst[n - 1] = source[n - 1];
-		n--;
+			n--;
+			}
 	}
 	else
 	{
-		i = 0;
-		while (i < n)
-		{
-			dst[i] = source[i];
-			i++;
-		}
+		ft_memcpy(dst, source, n);
 	}
 	return (dst);
 }
