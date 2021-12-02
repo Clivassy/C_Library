@@ -6,7 +6,7 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:02:22 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/01 20:03:44 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/02 14:52:08 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -50,8 +50,8 @@ char	*ft_itoa(int n)
 
 	nb = n;
 	len = ft_len(nb);
-	s_itoa = malloc(sizeof(char *) * (len + 1));
-	if (!(s_itoa))
+	s_itoa = (char *)malloc(sizeof(char) * (len + 1));
+	if (!s_itoa)
 		return (NULL);
 	s_itoa[len--] = '\0';
 	if (nb == 0)

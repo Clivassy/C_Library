@@ -47,8 +47,6 @@ OBJS_DIR = ./
 OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
 OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
 
-COMP_COLOR= 9
-
 .c.o: $(SRCS)
 	@echo "\033[0;31mCompiling..."
 	@$(CC) $(CFLAGS) -c -o $@ $<

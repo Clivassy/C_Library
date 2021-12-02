@@ -6,7 +6,7 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:10:49 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/01 20:14:07 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/02 21:16:57 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char			*str_join;
 	unsigned int	len;
 
+	if (!s1 || !s2)
+		return (NULL);
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
 	str_join = (char *)malloc(sizeof(char) * len);
 	if (!(str_join))
