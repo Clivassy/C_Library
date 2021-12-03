@@ -6,16 +6,16 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:16:53 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/01 20:19:57 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/03 14:28:11 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int ft_count_words(const char *str, char c)
+int	ft_count_words(const char *str, char c)
 {
-	int i;
-	int wrd_count;
+	int	i;
+	int	wrd_count;
 
 	wrd_count = 0;
 	i = 0;
@@ -36,12 +36,12 @@ int ft_count_words(const char *str, char c)
 char	*ft_malloc_word(const char *str, int start, int end)
 {
 	char	*malloc_w;
-	int i;
-	int len;
+	int		i;
+	int		len;
 
 	i = 0;
 	len = (end - start) + 1;
-	malloc_w= (char *)malloc(sizeof(char) * len);
+	malloc_w = (char *)malloc(sizeof(char) * len);
 	if (!malloc_w)
 		return (0);
 	while (start < end)
@@ -56,10 +56,10 @@ char	*ft_malloc_word(const char *str, int start, int end)
 
 char	**ft_split(char const *s, char c)
 {
-	size_t i;
-	size_t j;
-	int index;
-	char **array;
+	size_t	i;
+	size_t	j;
+	int		index;
+	char	**array;
 
 	if (!s)
 		return (NULL);
@@ -82,5 +82,5 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	array[j] = 0;
-	return(array);
+	return (array);
 }
