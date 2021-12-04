@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/22 14:39:00 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/04 14:17:13 by jbatoro          ###   ########.fr       */
+/*   Created: 2021/12/04 17:35:58 by jbatoro           #+#    #+#             */
+/*   Updated: 2021/12/04 18:32:00 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-#include <string.h>
+#include "libft.h"
 
-size_t	ft_strlen(const char *s)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	i;
-
-	i = 0;
-	while (s[i])
-		i++;
-	return (i);
+		if  (lst)
+		{
+			while (lst->next) // as lst point sur l element suivant
+				lst = lst->next;
+		}// on va sortir avant que lst ne pointe sur NULL.
+		return (lst);
 }

@@ -6,7 +6,7 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:38:27 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/02 21:24:02 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/04 17:44:57 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,16 @@
 # include <ctype.h>
 # include <unistd.h>
 
+typedef struct	s_list
+{
+	void	*content;
+	struct	s_list	*next;
+}			t_list;
+
+t_list		*ft_lstlast(t_list *lst);
+int			ft_lstsize(t_list *lst);
+void		ft_lstadd_front(t_list **alst, t_list *new);
+t_list		*ft_lstnew(void	*content);
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);
