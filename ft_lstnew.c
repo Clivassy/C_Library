@@ -6,17 +6,10 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 15:49:27 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/04 18:39:12 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/05 16:12:25 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
-/*
-typedef struct	s_list
-{
-	void			*content;
-	struct s_list	*next;
-}					t_list;
-*/
 
 t_list	*ft_lstnew(void *content)
 {

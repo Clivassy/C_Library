@@ -6,7 +6,7 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:16:53 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/03 14:28:11 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/05 15:18:06 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,18 +54,12 @@ char	*ft_malloc_word(const char *str, int start, int end)
 	return (malloc_w);
 }
 
-char	**ft_split(char const *s, char c)
+char	**ft_malloc_array(char const *s, char **array, char c)
 {
 	size_t	i;
 	size_t	j;
 	int		index;
-	char	**array;
 
-	if (!s)
-		return (NULL);
-	array = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
-	if (!array)
-		return (NULL);
 	i = 0;
 	j = 0;
 	index = -1;
@@ -82,5 +76,18 @@ char	**ft_split(char const *s, char c)
 		i++;
 	}
 	array[j] = 0;
+	return (array);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**array;
+
+	if (!s)
+		return (NULL);
+	array = malloc((ft_count_words(s, c) + 1) * sizeof(char *));
+	if (!array)
+		return (NULL);
+	ft_malloc_array(s, array, c);
 	return (array);
 }

@@ -6,7 +6,7 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:08:51 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/04 18:40:28 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/05 16:18:23 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -18,15 +18,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 
 	if (!s1 || !set)
 		return (NULL);
-	/* trouver le premier emplacement valide ds la string.
-	 cad l'emplacement qui n'est pas ds le set. */
 	while (*s1 && ft_strchr(set, *s1))
 		s1++;
-	/*trouver le dernier emplacement valide ds la string.*/
-	str_size = ft_strlen(s1); /* get the len of the string*/
+	str_size = ft_strlen(s1);
 	while (str_size && ft_strchr(set, s1[str_size]))
 		str_size--;
-	/* j'alloue de i a str_size SOIT ce qui est valide.*/	
 	new_string = ft_substr((char *)s1, 0, str_size + 1);
 	return (new_string);
 }
