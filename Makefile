@@ -19,15 +19,15 @@ RM	= rm -f
 	@echo "\033[0;31mCompiling..."
 	@${CC} -o $@ -c $< ${CFLAGS}
 	
-all : ${NAME} ${OBJS} ${OBJS_B}
+all : ${NAME}
 
-${NAME} :	${OBJS}
+${NAME} : ${OBJS}
 	@echo "\033[0;33mLinking..."
 	@ar rcs ${NAME} ${OBJS}
 	@echo "\033[0;32mOK!"
 
-bonus : ${NAME} ${OBJS_B}
-	ar rcs ${NAME} ${OBJS_B}
+bonus : ${OBJS_B} ${OBJS}
+		@ar rcs ${NAME} ${OBJS} ${OBJS_B}
 
 clean :
 	@echo "\033[0;33mCleaning..."
@@ -41,6 +41,6 @@ fclean : clean
 
 re : fclean all
 
-.PHONY : clean re fclean
+.PHONY : all bonus clean fclean re
 
 
