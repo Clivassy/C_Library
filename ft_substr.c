@@ -28,12 +28,12 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		new_s[0] = '\0';
 		return (new_s);
 	}
-	i = ft_strlen(s + start);
+	i = ft_strlen(&s[start]);
 	if (i < len)
 		len = i;
 	new_s = (char *)malloc(sizeof(char) * len + 1);
 	if (!new_s)
 		return (NULL);
-	ft_strlcpy(new_s, s + start, len + 1);
+	ft_strlcpy(new_s, &s[start], len + 1);
 	return (new_s);
 }
