@@ -30,8 +30,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 #include <stdio.h>
 int main()
 {
-	char const s1[] = "   xxx   xxx";
-	char const set[] = " x";
+	char const s1[] = "blahellobla";
+	char const set[] = "bla";
 
 	printf("%s\n", ft_strtrim(s1, set));
 }*/

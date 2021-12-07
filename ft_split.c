@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-int	ft_count_words(const char *str, char c)
+static int	ft_count_words(const char *str, char c)
 {
 	int	i;
 	int	wrd_count;
@@ -33,7 +33,7 @@ int	ft_count_words(const char *str, char c)
 	return (wrd_count);
 }
 
-char	*ft_malloc_word(const char *str, int start, int end)
+static char	*ft_malloc_word(const char *str, int start, int end)
 {
 	char	*malloc_w;
 	int		i;
@@ -54,7 +54,7 @@ char	*ft_malloc_word(const char *str, int start, int end)
 	return (malloc_w);
 }
 
-char	**ft_malloc_array(char const *s, char **array, char c)
+static char	**ft_malloc_array(char const *s, char **array, char c)
 {
 	size_t	i;
 	size_t	j;
@@ -77,6 +77,7 @@ char	**ft_malloc_array(char const *s, char **array, char c)
 	}
 	array[j] = 0;
 	return (array);
+	free(array);
 }
 
 char	**ft_split(char const *s, char c)
@@ -90,4 +91,5 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	ft_malloc_array(s, array, c);
 	return (array);
+	free(array);
 }

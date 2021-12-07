@@ -19,7 +19,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 
 	if (!s)
 		return (NULL);
-	len = ft_strlen(s);
+	len = strlen(s);
 	string = (char *)malloc(sizeof(char) * len + 1);
 	if ((!string))
 		return (NULL);
@@ -32,3 +32,33 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	string[i] = '\0';
 	return (string);
 }
+
+char 	*f(unsigned int plus, char c)
+{
+		c = c + plus;
+		return (0);
+}
+/*
+char ft_decalage(unsigned int i, char c)
+{
+    return ((char)i + c);
+}
+
+#include <stdio.h>
+void ft_test_strmapi()
+{
+    char (*pf)(unsigned int, char) = &ft_decalage;
+    char *s = "aabbcc";
+    char *returned = ft_strmapi(s, &ft_decalage);
+    char *expected = "abdegh";
+    if (strncmp(returned, expected, 100))
+    {
+        printf("error with str : '%s', return '%s', expexted '%s'\n",s , returned, expected);
+    }
+}
+
+int main()
+{
+	ft_test_strmapi();
+}
+*/

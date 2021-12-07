@@ -11,7 +11,7 @@
 /* ************************************************************************** */
 #include "libft.h"
 
-int	ft_len(long nb)
+static int	ft_len(long nb)
 {
 	int		len;
 
@@ -26,7 +26,7 @@ int	ft_len(long nb)
 	return (len);
 }
 
-char	*ft_pos_or_neg(char *s, long nb, int n)
+static char	*ft_pos_or_neg(char *s, long nb, int n)
 {
 	if (nb < 0)
 	{
