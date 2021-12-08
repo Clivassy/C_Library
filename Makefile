@@ -21,12 +21,12 @@ RM	= rm -f
 	
 all : ${NAME}
 
-${NAME} : ${OBJS}
+${NAME} : ${OBJS} libft.h
 	@echo "\033[0;33mLinking..."
 	@ar rcs ${NAME} ${OBJS}
 	@echo "\033[0;32mOK!"
 
-bonus : ${OBJS_B} ${OBJS}
+bonus : ${OBJS_B} ${OBJS} libft.h
 		@ar rcs ${NAME} ${OBJS} ${OBJS_B}
 
 clean :
