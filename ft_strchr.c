@@ -21,21 +21,3 @@ char	*ft_strchr(const char *s, int c)
 	}
 	return (NULL);
 }
-
-/*
-#include <stdio.h>
-#include <string.h>
-#include <stdlib.h>
-
-int iTest = 1;
-int main(int ac, char **av)
-{
-	if (ac == 2)
-	{
-		char s[] = "tripouille";	
-		printf("%s\n",ft_strchr(s, 't' + atoi(av[1])));
-		write(1, "\n", 1);
-		printf("%s\n", strchr(s, 't' + atoi(av[1])));
-		return (0);
-	}
-}*/

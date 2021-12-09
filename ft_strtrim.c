@@ -26,12 +26,3 @@ char	*ft_strtrim(char const *s1, char const *set)
 	new_string = ft_substr((char *)s1, 0, str_size + 1);
 	return (new_string);
 }
-/*
-#include <stdio.h>
-int main()
-{
-	char const s1[] = "blahellobla";
-	char const set[] = "bla";
-
-	printf("%s\n", ft_strtrim(s1, set));
-}*/
