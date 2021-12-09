@@ -6,7 +6,7 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/22 14:38:27 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/08 14:20:29 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/09 14:22:09 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@
 # include <ctype.h>
 # include <unistd.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void	*content;
-	struct	s_list	*next;
+	void			*content;
+	struct s_list	*next;
 }			t_list;
 
-t_list		*ft_lstmap(t_list *lst, void *(*f)(void *),void (*del)(void *));
+t_list		*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 void		ft_lstiter(t_list *lst, void (*f)(void *));
 void		ft_lstclear(t_list **lst, void (*del)(void*));
 void		ft_lstdelone(t_list *lst, void (*del)(void *));
@@ -65,7 +65,7 @@ void		ft_putendl_fd(char *s, int fd);
 char		*ft_itoa(int n);
 void		ft_striteri(char *s, void (*f)(unsigned int, char*));
 char		*ft_strmapi(char const *s, char (*f)(unsigned int, char));
-char 		**ft_split(char const *s, char c);
+char		**ft_split(char const *s, char c);
 char		*ft_strjoin(char const *s1, char const *s2);
 char		*ft_strtrim(char const *s1, char const *set);
 

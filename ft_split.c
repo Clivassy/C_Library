@@ -6,13 +6,13 @@
 /*   By: jbatoro <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/01 20:16:53 by jbatoro           #+#    #+#             */
-/*   Updated: 2021/12/05 15:18:06 by jbatoro          ###   ########.fr       */
+/*   Updated: 2021/12/09 13:58:38 by jbatoro          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static char			**ft_free(char **tab)
+static char	**ft_free(char **tab)
 {
 	unsigned int	i;
 
@@ -26,26 +26,27 @@ static char			**ft_free(char **tab)
 	return (NULL);
 }
 
-static int        ft_count_words(char const *s, char c)
+static int	ft_count_words(char const *s, char c)
 {
-    size_t    i;
-    int        count;
+	size_t		i;
+	int			count;
 
-    i = 0;
-    count = 0;
-    while (s[i])
-    {
-        if (s[i] != c)
-        {
-            count++;
-            while (s[i] != c && s[i])
-                i++;
-        }
-        else
-            i++;
-    }
-    return (count);
+	i = 0;
+	count = 0;
+	while (s[i])
+	{
+		if (s[i] != c)
+		{
+			count++;
+			while (s[i] != c && s[i])
+				i++;
+		}
+		else
+			i++;
+	}
+	return (count);
 }
+
 static char	*ft_malloc_word(const char *str, int start, int end)
 {
 	char	*malloc_w;
