@@ -19,9 +19,10 @@
 # include <ctype.h>
 # include <unistd.h>
 
-typedef struct s_list
+/* typedef struct s_list
 {
-	void			*content;
+	int				content;
+	int				index;
 	struct s_list	*next;
 }			t_list;
 
@@ -33,7 +34,7 @@ void		ft_lstadd_back(t_list **alst, t_list *new);
 t_list		*ft_lstlast(t_list *lst);
 int			ft_lstsize(t_list *lst);
 void		ft_lstadd_front(t_list **alst, t_list *new);
-t_list		*ft_lstnew(void	*content);
+t_list		*ft_lstnew(int content);*/
 int			ft_isalpha(int c);
 int			ft_isdigit(int c);
 int			ft_isalnum(int c);

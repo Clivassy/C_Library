@@ -107,3 +107,4 @@ char	**ft_split(char const *s, char c)
 	ft_malloc_array(s, array, c);
 	return (array);
 }
+
